@@ -13,10 +13,10 @@ public:
 		stack<int> s;
 		s.push(pushV[cur_push++]);
 		while (cur_push < popV.size() && cur_pop < popV.size()){
-			if (!s.empty()&&s.top() != popV[cur_pop] ){
+			while(!s.empty()&&s.top() != popV[cur_pop] ){
 				s.push(pushV[cur_push++]);
 			}
-			else if (!s.empty() && s.top() == popV[cur_pop]){
+			while(!s.empty() && s.top() == popV[cur_pop]){
 				s.pop();
 				++cur_pop;
 			}
@@ -32,8 +32,8 @@ public:
 
 void TestFunc(){
 	vector<int> array1 = { 1, 2, 3, 4, 5 };
-	vector<int> array2 = { 4, 5, 3, 2, 1 };
-	/*vector<int> array2 = { 4, 3, 5, 1, 2 };*/
+	/*vector<int> array2 = { 4, 5, 3, 2, 1 };*/
+	vector<int> array2 = { 4, 3, 5, 1, 2 };
 	Solution s;
 	cout << s.IsPopOrder(array1, array2) << endl;
 }
