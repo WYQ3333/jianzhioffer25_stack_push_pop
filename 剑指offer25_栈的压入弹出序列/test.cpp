@@ -25,10 +25,16 @@ public:
 				++cur_pop;
 			}
 			else{
+				++cur_pop;
 				return false;
 			}
 		}
-		return true;
+		if (!s.empty()){
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
 };
 
