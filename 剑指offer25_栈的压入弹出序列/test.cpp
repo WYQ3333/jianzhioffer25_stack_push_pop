@@ -10,7 +10,16 @@ public:
 	bool IsPopOrder(vector<int> pushV, vector<int> popV) {
 		int cur_push = 0;
 		int cur_pop = 0;
+		size_t t = 1;
 		stack<int> s;
+		if (pushV.size() != popV.size()){
+			return false;
+		}
+		if (pushV.size() == t && popV.size() == t){
+			if (pushV[0] == popV[0]){
+				return true;
+			}
+		}
 		s.push(pushV[cur_push++]);
 		while (cur_push < popV.size() && cur_pop < popV.size()){
 			while(!s.empty()&&s.top() != popV[cur_pop] ){
