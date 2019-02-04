@@ -33,7 +33,11 @@ public:
 };
 
 void TestFunc(){
-
+	vector<int> array1 = { 1, 2, 3, 4, 5 };
+	/*vector<int> array2 = { 4, 5, 3, 2, 1 };*/
+	vector<int> array2 = { 4, 3, 5, 1, 2 };
+	Solution s;
+	cout << s.IsPopOrder(array1, array2) << endl;
 }
 
 int main(){
