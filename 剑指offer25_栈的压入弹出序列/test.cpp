@@ -12,21 +12,13 @@ public:
 		int cur_pop = 0;
 		stack<int> s;
 		s.push(pushV[cur_push++]);
-		while (cur_pop < popV.size()){
-			if (!s.empty()&&s.top() != popV[cur_pop] && pushV[cur_push]!= popV[cur_pop]){
+		while (cur_push < popV.size() && cur_pop < popV.size()){
+			if (!s.empty()&&s.top() != popV[cur_pop] ){
 				s.push(pushV[cur_push++]);
-			}
-			else if (!s.empty() && s.top() != popV[cur_pop] && pushV[cur_push] == popV[cur_pop]){
-				++cur_pop;
-				++cur_push;
 			}
 			else if (!s.empty() && s.top() == popV[cur_pop]){
 				s.pop();
 				++cur_pop;
-			}
-			else{
-				++cur_pop;
-				return false;
 			}
 		}
 		if (!s.empty()){
